@@ -28,7 +28,12 @@ merger = PdfWriter()
 for pdf in pdfs:
     merger.append(pdf)
 
-merger.write("NewFile.pdf")
+output = input("What do you want the file name to be?")
+
+if not output.lower().endswith('.pdf'):
+    output += '.pdf'
+
+merger.write(output)
 merger.close()
 
 # Workflow for Bundling (Bundle of Documents for example)
